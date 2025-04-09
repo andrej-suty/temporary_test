@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic_release_demo"
+version = "0.1.0" # Initial version, semantic-release will manage this
+description = "A simple demo project for python-semantic-release"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+# Add dependencies here if needed, e.g.:
+# dependencies = [
+#     "requests>=2.20"
+# ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",      # For running tests
+    "build>=0.7",       # For building the package
+    "python-semantic-release>=8.0", # The release tool itself
+    # Add other dev tools like linters (flake8, black, mypy) or formatters here if desired
+]
+
+[project.urls]
+"Homepage" = "https://github.com/your_username/semantic_release_demo" # Replace with actual URL
+"Bug Tracker" = "https://github.com/your_username/semantic_release_demo/issues" # Replace with actual URL
+
+[tool.setuptools.packages.find]
+where = ["src"]  # look for packages in the src directory
+
+# Configuration for python-semantic-release
+[tool.semantic_release]
+# version_toml = ["pyproject.toml", "project.version"] # Where to update the version
+version_variable = "pyproject.toml:project.version"
+branch = "main"                                 # Default branch for releases
+changelog_file = "CHANGELOG.md"                 # File to store the changelog
+build_command = "pip install build && python -m build" # Command to build distributions
+dist_path = "dist/"                             # Where distributions are stored
+upload_to_pypi = false                          # Set to true to upload to PyPI
+upload_to_release = true                        # Upload distributions to GitHub release
+commit_author = "semantic-release <semantic-release@example.com>" # Author for release commits
+commit_subject = "chore(release): bump version to {version}" # Commit message subject
+# Define commit types that trigger releases (optional, defaults are usually fine)
+# major_on_zero = true # Set to true if you want breaking changes (feat!) on 0.x versions to bump to 1.0.0
+
+# Optional: Configure commit parser options if needed
+# [tool.semantic_release.commit_parser_options]
+# allowed_tags = ["build", "chore", "ci", "docs", "feat", "fix", "perf", "style", "refactor", "test"]
+# minor_tags = ["feat"]
+# patch_tags = ["fix", "perf"]
+# change_breaking_keyword = "BREAKING CHANGE"
+
+# Optional: Define assets to upload to the GitHub release
+# [tool.semantic_release.assets]
+# paths = ["dist/*"] # Upload all files in the dist directory
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+testpaths = [
+    "tests",
+]
