@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-04-09)
+
+### Features
+
+- Add user configuration option to greeting
+  ([`1244f51`](https://github.com/andrej-suty/temporary_test/commit/1244f5164746eb4c0dbd1f276d4b5273500c73e6))
+
+
 ## v0.3.0 (2025-04-09)
 
 ### Features
