@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.7.0 (2025-04-09)
+
+### Features
+
+- Kappa
+  ([`8a0fd0f`](https://github.com/andrej-suty/temporary_test/commit/8a0fd0fac846bad3c3d3a79459765549d654a819))
+
+
 ## v0.6.0 (2025-04-09)
 
 ### Features
