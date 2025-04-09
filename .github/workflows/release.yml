@@ -42,6 +42,6 @@ jobs:
         env:
           # GITHUB_TOKEN is automatically used by python-semantic-release
           # when running in GitHub Actions
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # If uploading to PyPI, you would need:
           # PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }} # Store your PyPI token as a secret
