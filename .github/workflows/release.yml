@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for semantic-release
-          token: ${{ secrets.GITHUB_TOKEN }} # Use the default GITHUB_TOKEN
+          token: ${{ secrets.GH_TOKEN }} # Use the default GITHUB_TOKEN
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,6 +42,6 @@ jobs:
         env:
           # GITHUB_TOKEN is automatically used by python-semantic-release
           # when running in GitHub Actions
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           # If uploading to PyPI, you would need:
           # PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }} # Store your PyPI token as a secret
