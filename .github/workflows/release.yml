@@ -38,7 +38,10 @@ jobs:
           git config user.email "semantic-release[bot]@users.noreply.github.com"
 
       - name: Run semantic-release
-        run: semantic-release publish
+        run: |
+          semantic-release version
+          semantic-release publish
+
         env:
           # GITHUB_TOKEN is automatically used by python-semantic-release
           # when running in GitHub Actions
