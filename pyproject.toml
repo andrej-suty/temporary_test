@@ -36,15 +36,15 @@ where = ["src"]  # look for packages in the src directory
 # Configuration for python-semantic-release
 [tool.semantic_release]
 # version_toml = ["pyproject.toml", "project.version"] # Where to update the version
-version_variable = "pyproject.toml:project.version"
+version_toml = ["pyproject.toml:project.version:nf"]
 branch = "main"                                 # Default branch for releases
-changelog_file = "CHANGELOG.md"                 # File to store the changelog
-build_command = "pip install build && python -m build" # Command to build distributions
-dist_path = "dist/"                             # Where distributions are stored
+# changelog_file = "CHANGELOG.md"                 # File to store the changelog
+# build_command = "pip install build && python -m build" # Command to build distributions
+# dist_path = "dist/"                             # Where distributions are stored
 upload_to_pypi = false                          # Set to true to upload to PyPI
 upload_to_release = true                        # Upload distributions to GitHub release
-commit_author = "semantic-release <semantic-release@example.com>" # Author for release commits
-commit_subject = "chore(release): bump version to {version}" # Commit message subject
+# commit_author = "semantic-release <semantic-release@example.com>" # Author for release commits
+# commit_subject = "chore(release): bump version to {version}" # Commit message subject
 # Define commit types that trigger releases (optional, defaults are usually fine)
 # major_on_zero = true # Set to true if you want breaking changes (feat!) on 0.x versions to bump to 1.0.0
 
