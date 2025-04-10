@@ -85,11 +85,3 @@ A `.github/workflows/release.yml` file will be added to automate the release pro
 ## Contributing
 
 Feel free to experiment with changes and commit messages to see how semantic-release behaves. Remember to replace the placeholder GitHub URLs in `pyproject.toml` and this README with your actual repository URL.
-
-
-
-## FIX
-- Test
-- Test
-- Test
-- Test
