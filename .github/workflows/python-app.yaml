@@ -1,0 +1,30 @@
+name: Version bump on merge on main or develop
+
+on:
+  workflow_dispatch:
+    inputs:
+      version-type:
+        description: 'Type of version bump (major, minor, patch)'
+        required: true
+        default: 'minor'
+
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x" # Use a recent Python version
+
+      - name: Determine version bump
+        id: version_bump
+        run: |
+          VERSION_TYPE="${{ github.event.inputs.version-type }}"
+          echo "Version bump type: $VERSION_TYPE"
+          echo "version_type=$VERSION_TYPE" >> $GITHUB_ENV
+
